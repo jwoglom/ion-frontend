@@ -22,7 +22,7 @@
       height: 100%;
       z-index: 10;
       border-right: 1px solid rgba(0,0,0,.1);
-      background: inherit;
+      background: rgba(232,232,232,0.5);
     }
     
     .left {
@@ -685,11 +685,18 @@
 
     /* activity icons */
 
-    .act-icon {
+    .icon-act {
       font-size: 17px;
       vertical-align: middle;
     }
-
+    /* icon-ok-circle */
+    .icon-act.signedup:before { content: "\f05d"; color: rgba(0, 255, 0, 1); }
+    .icon-act.open:before { content: "\f10c"; color: rgba(0, 255, 0, 0.5); }
+    .icon-act.half:before { content: "\f042"; color: rgba(255, 127, 0, 0.3);}
+    .icon-act.almost:before { content: "\f06a"; color: rgba(255, 127, 0, 0.5); }
+    .icon-act.full:before { content: "\f111"; color: rgba(255, 0, 0, 0.5); }
+    .icon-act.restricted:before { content: "\f056"; color: rgba(255, 0, 0, 0.3); }
+    .icon-act.cancelled:before { content: "\f057"; color: rgba(255, 0, 0, 0.3); }
     </style>
         
         <div class="right-container">
@@ -736,57 +743,57 @@
               -->
              
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-ok-circle"></i>
+                <i class="icon-act signedup"></i>
                 <h3>Signed up</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-circle-blank"></i>
+                <i class="icon-act open"></i>
                 <h3>Less than 50% full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-adjust"></i>
+                <i class="icon-act half"></i>
                 <h3>More than 50% full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-exclamation-sign"></i>
+                <i class="icon-act almost"></i>
                 <h3>More than 90% full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-circle"></i>
+                <i class="icon-act full"></i>
                 <h3>Full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-minus-sign"></i>
+                <i class="icon-act restricted"></i>
                 <h3>Restricted</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-remove-sign"></i>
+                <i class="icon-act cancelled"></i>
                 <h3>Cancelled</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-circle-blank"></i>
+                <i class="icon-act icon-circle-blank"></i>
                 <h3>Less than 50% full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-circle-blank"></i>
+                <i class="icon-act icon-circle-blank"></i>
                 <h3>Less than 50% full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-circle-blank"></i>
+                <i class="icon-act icon-circle-blank"></i>
                 <h3>Less than 50% full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
               <div class="activity" data-aid="1">
-                <i class="act-icon icon-circle-blank"></i>
+                <i class="icon-act icon-circle-blank"></i>
                 <h3>Less than 50% full</h3>
                 <h4>Hamilton - 115</h4>
               </div>
@@ -820,7 +827,7 @@
 
           .schedule-widget .day.today {
             margin-left: 86px;
-            background-color: rgb(252, 252, 252);
+            background-color: rgb(242, 242, 242);
           }
 
           .schedule-widget .day.tomorrow {
@@ -833,7 +840,7 @@
             width: 260px;
             height: 300px;
             border: 1px solid rgb(216, 216, 216);
-            background-color: rgb(236, 236, 236);
+            background-color: rgb(232, 232, 232);
           }
           .schedule-widget .day h3 {
             font-size: 18px;
