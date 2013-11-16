@@ -1,0 +1,38 @@
+.left-wrapper, .main-wrapper {
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+@media (max-width: 730px) {
+  .left-wrapper {
+    width: 100px;
+  }
+
+  div.main-wrapper {
+    margin-left: 100px;
+  }
+
+  h1 {
+    font-size: 17px;
+  }
+
+  ul.status li.username {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.nav li a span {
+    display: none;
+  }
+
+  ul.nav li {
+    padding-left: 18px;
+  }
+
+  ul.nav li.bottom {
+    width: 82px;
+  }
+}

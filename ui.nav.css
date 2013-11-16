@@ -1,0 +1,89 @@
+/* nav */
+
+/* container */
+.nav {
+  display: block;
+  /*width: 73px;*/
+  width: 100%;
+  /*border: 1px solid rgb(216, 216, 216);*/
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  float: left;
+  padding: 1px 0;
+  margin-bottom: 16px;
+  behavior: url("/static/js/PIE/PIE.htc");
+}
+
+/* basics */
+.nav li {
+  border: 1px solid rgb(216, 216, 216);
+  margin: -1px -1px -1px -1px;
+}
+
+.nav li:first-child {
+  margin-top: -2px;
+}
+
+.nav li.selected {
+  background-color: rgb(252,252,252);
+}
+
+.nav li.selected a span, .nav li:hover a span,
+.nav li.selected a .nav-fa-icon, .nav li:hover a .nav-fa-icon {
+  color: rgb(72,72,72);
+}
+
+.nav li.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav li a {
+  display: inline-block;
+  padding: 9px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nav li a span {
+  padding-top: 3px;
+}
+
+.nav li a, .nav li a:active, .nav li a:visited {
+  text-decoration: none;
+}
+
+.nav li a span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.nav li a span, .nav li a:active span, .nav li a:visited span,
+.nav li a .nav-fa-icon {
+  color: rgb(169,169,169);
+}
+
+.nav-icon, i.nav-fa-icon {
+  display: table-cell;
+  text-align: left;
+  width: 40px;
+  height: 40px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-icon {
+  background-image: url(https://ion.tjhsst.edu/static/img/icons.png);
+  background-size: 252px 84px;
+}
+
+.nav-fa-icon {
+  font-size: 38px; /* approx 48x40 */
+}

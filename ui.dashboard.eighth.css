@@ -1,0 +1,106 @@
+.dashboard .right-container {
+  position: absolute;
+  top: 0;
+  left: 530px;
+  width: 465px;
+}
+
+.dashboard .eighth-widget {
+  margin-left: 30px;
+}
+
+/* eighth widget */
+
+.eighth-widget .blocks {
+  width: 120px;
+  height: 200px;
+  border: 1px solid rgb(216, 216, 216);
+}
+
+.eighth-widget .block {
+  border: 1px solid rgb(216, 216, 216);
+  /*border-right: none;*/
+  margin: -1px -1px -1px -1px;
+  padding: 5px 0 5px 5px;
+}
+
+.eighth-widget .block.selected {
+  background-color: rgb(252,252,252);
+}
+
+.eighth-widget .block.selected h3, .eighth-widget .block:hover h3 {
+  color: rgb(72, 72, 72);
+}
+
+
+.eighth-widget .block b {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  background-color: rgb(215,215,215);
+  border-radius: 3px;
+  behavior: url("/static/js/PIE/PIE.htc");
+}
+
+.eighth-widget .block h3 {
+  display: inline;
+  font-size: 13px;
+
+  color: rgb(169, 169, 169);
+}
+
+.eighth-widget .block.loader {
+  border-bottom: none;
+  text-align: center;
+}
+
+/* activities */
+.eighth-widget .activities {
+  position: absolute;
+  left: 152px;
+  top: 68px;
+  width: 314px;
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid rgb(216, 216, 216);
+}
+
+.eighth-widget .activity {
+  border: 1px solid rgb(216, 216, 216);
+  margin: -1px -1px -1px -1px;
+  padding: 4px 3px;
+  width: 307px;
+}
+
+.eighth-widget .activity h3, .eighth-widget .activity h4 {
+  vertical-align: middle;
+}
+
+.eighth-widget .activity h3 {
+  display: inline;
+  color: rgb(74, 74, 74);
+}
+
+.eighth-widget .activity h4 {
+  display: inline;
+  float: right;
+  color: rgb(169,169,169);
+}
+
+/* activity icons */
+
+.icon-act {
+  font-size: 17px;
+  vertical-align: middle;
+}
+/* icon-ok-circle */
+.icon-act.signedup:before { content: "\f05d"; color: rgba(0, 255, 0, 1); }
+.icon-act.open:before { content: "\f10c";  }
+.icon-act.half:before { content: "\f042"; color: rgba(255, 127, 0, 0.5);}
+.icon-act.almost:before { content: "\f06a"; color: rgba(255, 127, 0, 0.9); }
+.icon-act.full:before { content: "\f111"; color: rgba(255, 0, 0, 0.7); }
+.icon-act.restricted:before { content: "\f056"; color: rgba(255, 0, 0, 0.5); }
+.icon-act.cancelled:before { content: "\f057"; color: rgba(255, 0, 0, 0.5); }

@@ -1,0 +1,131 @@
+ul.status {
+  padding-left: 0;
+}
+
+/* notifications */
+.notifications {
+  display: inline-block;
+  position: relative;
+  padding: 0 10px;
+  line-height: normal;
+}
+
+.has-dropdown {
+  cursor: pointer;
+}
+
+.dropdown-item-wrapper {
+  height: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
+.notifications i {
+  position: relative;
+  display: inline-block;
+  font-size: 17px;
+  top: 1px;
+  line-height: normal;
+  text-align: center;
+  width: 16px;
+  color: rgb(72,72,72);
+}
+
+.notifications-badge-wrapper {
+  display: inline-block;
+  line-height: normal;
+}
+
+.notifications-badge {
+  color: white;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  height: 14px;
+  line-height: 14px;
+  padding: 0 4px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgb(255,72,72);
+  font-size: 10px;
+  font-weight: bold;
+  /*text-shadow: 0 1px 0 rgb(173, 2, 11);
+  box-shadow: 0 1px 0 rgb(4,33,71);*/
+  behavior: url("/static/js/PIE/PIE.htc");
+
+  transition-duration: 0.4s;
+}
+
+.notifications-badge.none {
+  background-color: rgb(72,72,72);
+}
+
+.notifications .dropdown-menu {
+  /*margin: 35px -45px;*/
+  margin: 33px -112px;
+  width: 180px;
+
+}
+.notifications .dropdown-menu div.arrow {
+  left: 53px;
+}
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  color: rgb(72,72,72);
+  background-color: white;
+  top: 10px;
+  margin-top: 35px;
+  padding: 10px;
+  right: 0;
+  line-height: 1.7;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border: 1px solid rgb(129, 129, 129);
+  cursor: auto;
+  list-style: none;
+  z-index: 999;
+}
+
+.dropdown-menu .arrow {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-width: 10px;
+  border-style: solid;
+  border-bottom-color: white;
+  border-top-width: 0;
+  margin-top: -20px;
+  margin-left: -5px;
+}
+
+.dropdown-menu li {
+  white-space: nowrap;
+}
+
+/* username dropdown */
+.username {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  padding: 0 10px 0 0;
+  line-height: normal;
+}
+
+.username .dropdown-menu .arrow {
+  right: 29.5px;
+}
+
+.dropdown-menu a {
+  color: rgb(72,72,72);
+  display: block;
+}

@@ -1,0 +1,13 @@
+/* main styles */
+.main-wrapper {
+  margin-left: 200px;
+}
+
+.main {
+  position: absolute;
+}
+
+.main h2 {
+  font-size: 20px;
+  padding: 20px;
+}

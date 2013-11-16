@@ -1,0 +1,48 @@
+/* nav icons */
+.dashboard-icon {
+  background-position: 0 0;
+}
+
+.nav .selected .dashboard-icon, a:hover .dashboard-icon {
+  background-position: 0 42px;
+}
+
+.eighth-icon {
+  background-position: -44px 0;
+}
+
+.nav .selected .eighth-icon, a:hover .eighth-icon {
+  background-position: -44px 42px;
+}
+
+.events-icon {
+  background-position: -84px 0;
+}
+
+.nav .selected .events-icon, a:hover .events-icon {
+  background-position: -84px 42px;
+}
+
+.groups-icon {
+  background-position: -126px 0;
+}
+
+.nav .selected .groups-icon, a:hover .groups-icon {
+  background-position: -126px 42px;
+}
+
+.polls-icon {
+  background-position: -168px 0;
+}
+
+.nav .selected .polls-icon, a:hover .polls-icon {
+  background-position: -168px 42px;
+}
+
+.files-icon {
+  background-position: -210px 0;
+}
+
+.nav .selected .files-icon, a:hover .files-icon {
+  background-position: -210px 42px;
+}

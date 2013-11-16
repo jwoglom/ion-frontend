@@ -1,0 +1,63 @@
+/* dashboard */
+
+/* announcements */
+.dashboard h2.announcements {
+  /* needed so the post button is lined up */
+  width: 510px;
+}
+
+.dashboard h2.announcements .actions {
+  float: right;
+  margin-top: -4px;
+}
+
+.dashboard .announcements-container {
+  margin-left: 30px;
+  width: 500px;
+}
+
+.announcements-container .announcement {
+  /*position: relative;*/
+  background-color: rgb(252,252,252);
+  border-radius: 5px;
+  border: 1px solid rgb(216, 216, 216);
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  behavior: url("/static/js/PIE/PIE.htc");
+}
+
+.announcement h3 {
+  color: rgb(72,72,72);
+  font-size: 18px;
+}
+
+.announcement .actions {
+  /*position: absolute;
+  right: 10px;
+  top: 10px;*/
+  float: right;
+  margin-top: -25px;
+}
+
+.announcement .actions i {
+  font-size: 14px;
+  padding-left: 3px;
+  color: rgb(169,169,169);
+  text-decoration: none;
+}
+
+.announcement .actions i:hover {
+  color: rgb(72,72,72);
+}
+
+.announcement .metadata, .announcement .metadata a {
+  color: rgb(169,169,169);
+}
+
+.announcement .metadata {
+  font-size: 12px;
+}
+
+.announcement .metadata b {
+  color: rgb(72,72,72);
+}
