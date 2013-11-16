@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Intranet - Eighth Period</title>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:100italic,400italic,700italic,100,400,700" />
+    <link rel="stylesheet" type="text/css" href="base.css" />
+    
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/modernizr.js"></script>
+
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/common.js"></script>
+    <script type="text/javascript" src="dropdown.js"></script>
+    <script type="text/javascript" src="nav.js"></script>
+    <link rel="stylesheet" type="text/css" href="ui.left.css" />
+    <link rel="stylesheet" type="text/css" href="ui.left.responsive.css" />
+    <link rel="stylesheet" type="text/css" href="ui.status.css" />
+    <link rel="stylesheet" type="text/css" href="ui.nav.css" />
+    <link rel="stylesheet" type="text/css" href="ui.nav.icons.css" />
+    <link rel="stylesheet" type="text/css" href="ui.main.css" />
+    <link rel="stylesheet" type="text/css" href="ui.eighth.css" />
+    
+  </head>
+  <body>
+    <div class="left-wrapper">
+      <div class="left">
+        <div class="header">
+          <div class="title">
+            <div class="logo"></div>
+            <h1>TJ Intranet</h1>
+          </div>
+          <ul class="status">
+            <li class="notifications has-dropdown">
+              <div class="dropdown-item-wrapper">
+                <i class="icon-bell-alt"></i>
+                <span class="notifications-badge-wrapper">
+                  <span class="notifications-badge none">
+                      0
+                  </span>
+                  <script>
+                  $('.notifications-badge').hover(function() {
+                    $('.notifications-badge').removeClass('none').html('1');
+                  });
+                  </script>
+                </span>
+              </div>
+              <ul class="dropdown-menu" style="display: none; top: 50px; opacity: 0;">
+                <div class="arrow"></div>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+              </ul>
+            </li>
+
+            <li class="username has-dropdown">
+              <div class="dropdown-item-wrapper">
+                  <i class="icon-user"></i> James <i class="icon-caret-down"></i>
+              </div>
+              <ul class="dropdown-menu">
+                <div class="arrow"></div>
+                <li>
+                  <a href="/profile" data-loc="profile"><i class="icon-user"></i> My Profile</a>
+                </li>
+                <li>
+                  <a href="/logout" data-loc="index"><i class="icon-off"></i> Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="nav-wrapper">
+          <ul class="nav">
+            <li>
+              <a href="/" data-loc="dashboard">
+                <i class="nav-icon dashboard-icon"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="selected">
+              <a href="/eighth" data-loc="eighth">
+                <i class="nav-icon eighth-icon"></i>
+                <span>Eighth</span>
+              </a>
+            </li>
+            <li>
+              <a href="/events" data-loc="events">
+                <i class="nav-icon events-icon"></i>
+                <span>Events</span>
+              </a>
+            </li>
+            <li>
+              <a href="/groups" data-loc="groups">
+                <i class="nav-icon groups-icon"></i>
+                <span>Groups</span>
+              </a>
+            </li>
+            <li>
+              <a href="/polls" data-loc="polls">
+                <i class="nav-icon polls-icon"></i>
+                <span>Polls</span>
+              </a>
+            </li>
+            <li>
+              <a href="/files" data-loc="files">
+                <i class="nav-icon files-icon"></i>
+                <span>Files</span>
+              </a>
+            </li>
+            <li class="bottom">
+              <a href="/settings" data-loc="settings">
+                <i class="nav-fa-icon icon-gear"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <style type="text/css">
+    .main h2.eighth-title {
+      width: 700px;
+    }
+
+    .eighth-container {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      margin-left: 30px;
+    }
+
+    .blocks-container {
+      height: 150px;
+      width: 100%;
+      border: 1px solid rgb(216, 216, 216);
+      margin: -1px -1px -1px -1px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    ul.blocks {
+      padding: 0;
+      margin: 0;
+      width: 10000px;
+      margin-left: -129px;
+      height: 150px;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    ul.blocks li {
+      display: block;
+      float: left;
+      width: 200px;
+      height: 100%;
+      padding: 10px 0;
+      border: 1px solid rgb(216, 216, 216);
+      /*border-right: none;*/
+      margin: -1px -1px -1px -1px;
+    }
+
+    ul.blocks li.arrow {
+      width: 25px;
+    }
+
+    ul.blocks .day h3 {
+      font-size: 15px;
+      text-align: center;
+    }
+
+    ul.blocks .day .block-container {
+      margin-top: 10px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 109px;
+
+    }
+
+    ul.blocks .day .block {
+      padding: 5px 12px;
+      /* line up */
+      min-height: 36px;
+
+      border: 1px solid rgb(216, 216, 216);
+      margin: 0 -1px -1px 0;
+
+      width: 176px;
+    }
+
+    ul.blocks .day .block.selected, ul.blocks .day .block:hover {
+      background-color: rgb(252,252,252);
+    }
+
+    ul.blocks .day .block > b {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: center;
+      background-color: rgb(215,215,215);
+      border-radius: 3px;
+      behavior: url("/static/js/PIE/PIE.htc");
+    }
+
+    ul.blocks .day .block .activity span {
+      display: block;
+      padding-left: 19px;
+      color: rgb(169,169,169);
+    }
+    </style>
+    <div class="main-wrapper">
+      <div class="main eighth">
+
+        <h2 class="eighth-title">
+          Eighth Period
+        </h2>
+        <div class="eighth-container">
+          <div class="blocks-container">
+            <ul class="blocks">
+              <!--li class="arrow arrow-left">
+                
+              </li-->
+              <li class="day">
+                <h3>Friday, November 15</h3>
+                <div class="block-container">
+                  <div class="block">
+                    <b>A</b>
+                    <span class="activity">
+                      No activity selected
+                    </span>
+                  </div>
+                  <div class="block">
+                    <b>B</b>
+                    <span class="activity">
+                      <b>Sys Op Administrators</b>
+                      <span>Hamilton - 115</span>
+                    </span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="day">
+                <h3>Monday, November 18</h3>
+                <div class="block-container">
+                  
+                  <div class="block">
+                    <b>B</b>
+                    <span class="activity">
+                      <b>Sys Op Administrators</b>
+                      <span>Hamilton - 115</span>
+                    </span>
+                  </div>
+                  
+                </div>
+              </li>
+
+              <li class="day">
+                <h3>Wednesday, November 20</h3>
+                <div class="block-container">
+                  
+                  <div class="block">
+                    <b>A</b>
+                    <span class="activity">
+                      <b>Sys Op Administrators</b>
+                      <span>Hamilton - 115</span>
+                    </span>
+                  </div>
+
+                  <div class="block">
+                    <b>B</b>
+                    <span class="activity">
+                      <b>Sys Op Administrators</b>
+                      <span>Hamilton - 115</span>
+                    </span>
+                  </div>
+
+                  <div class="block">
+                    <b>C</b>
+                    <span class="activity">
+                      <b>Techlab visits</b>
+                      <span>n/a</span>
+                    </span>
+                  </div>
+
+                  <div class="block">
+                    <b>D</b>
+                    <span class="activity">
+                      <b>Techlab visits</b>
+                      <span>n/a</span>
+                    </span>
+                  </div>
+
+                  <div class="block">
+                    <b>E</b>
+                    <span class="activity">
+                      <b>Techlab visits</b>
+                      <span>n/a</span>
+                    </span>
+                  </div>
+
+                  <div class="block">
+                    <b>F</b>
+                    <span class="activity">
+                      <b>Techlab visits</b>
+                      <span>n/a</span>
+                    </span>
+                  </div>
+                  
+                </div>
+              </li>
+
+              <li class="day">
+                <h3>Friday, November 22</h3>
+                <div class="block-container">
+                  <div class="block">
+                    <b>A</b>
+                    <span class="activity">
+                      No activity selected
+                    </span>
+                  </div>
+                  <div class="block">
+                    <b>B</b>
+                    <span class="activity">
+                      <b>Sys Op Administrators</b>
+                      <span>Hamilton - 115</span>
+                    </span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="day">
+                <h3>Monday, November 15</h3>
+                <div class="block-container">
+                  
+                  <div class="block">
+                    <b>B</b>
+                    <span class="activity">
+                      <b>Sys Op Administrators</b>
+                      <span>Hamilton - 115</span>
+                    </span>
+                  </div>
+                  
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
