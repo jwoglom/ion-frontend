@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Intranet - Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:100italic,400italic,700italic,100,400,700" />
+    <link rel="stylesheet" type="text/css" href="base.css" />
+    
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/modernizr.js"></script>
+
+    <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/common.js"></script>
+    <script type="text/javascript" src="dropdown.js"></script>
+    <script type="text/javascript" src="nav.js"></script>
+    <link rel="stylesheet" type="text/css" href="ui.left.css" />
+    <link rel="stylesheet" type="text/css" href="ui.left.responsive.css" />
+    <link rel="stylesheet" type="text/css" href="ui.status.css" />
+    <link rel="stylesheet" type="text/css" href="ui.nav.css" />
+    <link rel="stylesheet" type="text/css" href="ui.nav.icons.css" />
+    <link rel="stylesheet" type="text/css" href="ui.main.css" />
+    <link rel="stylesheet" type="text/css" href="ui.dashboard.announcements.css" />
+    <link rel="stylesheet" type="text/css" href="ui.dashboard.eighth.css" />
+    <link rel="stylesheet" type="text/css" href="ui.dashboard.schedule.css" />
+  </head>
+  <body>
+    <div class="left-wrapper">
+      <div class="left">
+        <div class="header">
+          <div class="title">
+            <div class="logo"></div>
+            <h1>TJ Intranet</h1>
+          </div>
+          <ul class="status">
+            <li class="notifications has-dropdown">
+              <div class="dropdown-item-wrapper">
+                <i class="icon-bell-alt"></i>
+                <span class="notifications-badge-wrapper">
+                  <span class="notifications-badge none">
+                      0
+                  </span>
+                  <script>
+                  $('.notifications-badge').hover(function() {
+                    $('.notifications-badge').removeClass('none').html('1');
+                  });
+                  </script>
+                </span>
+              </div>
+              <ul class="dropdown-menu" style="display: none; top: 50px; opacity: 0;">
+                <div class="arrow"></div>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+                <li>foo foo foo foo foo</li>
+              </ul>
+            </li>
+
+            <li class="username has-dropdown">
+              <div class="dropdown-item-wrapper">
+                  <i class="icon-user"></i> James <i class="icon-caret-down"></i>
+              </div>
+              <ul class="dropdown-menu">
+                <div class="arrow"></div>
+                <li>
+                  <a href="/profile" data-loc="profile"><i class="icon-user"></i> My Profile</a>
+                </li>
+                <li>
+                  <a href="/logout" data-loc="index"><i class="icon-off"></i> Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="nav-wrapper">
+          <ul class="nav">
+            <li class="selected">
+              <a href="/" data-loc="dashboard">
+                <i class="nav-icon dashboard-icon"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="/eighth" data-loc="eighth">
+                <i class="nav-icon eighth-icon"></i>
+                <span>Eighth</span>
+              </a>
+            </li>
+            <li>
+              <a href="/events" data-loc="events">
+                <i class="nav-icon events-icon"></i>
+                <span>Events</span>
+              </a>
+            </li>
+            <li>
+              <a href="/groups" data-loc="groups">
+                <i class="nav-icon groups-icon"></i>
+                <span>Groups</span>
+              </a>
+            </li>
+            <li>
+              <a href="/polls" data-loc="polls">
+                <i class="nav-icon polls-icon"></i>
+                <span>Polls</span>
+              </a>
+            </li>
+            <li>
+              <a href="/files" data-loc="files">
+                <i class="nav-icon files-icon"></i>
+                <span>Files</span>
+              </a>
+            </li>
+            <li class="bottom">
+              <a href="/settings" data-loc="settings">
+                <i class="nav-fa-icon icon-gear"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-wrapper">
+      <div class="main dashboard">
+
+        <h2 class="announcements">
+          Announcements
+          <span class="actions">
+            <button>
+              <i class="icon-plus"></i>
+              Post
+            </button>
+          </span>
+        </h2>
+
+        <div class="announcements-container">
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+
+            </div>
+          </div>
+
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+            </div>
+          </div>
+
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+            
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+            </div>
+          </div>
+
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+            
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="right-container">
+          <h2 class="eighth">
+            Eighth Period
+          </h2>
+          <div class="eighth-widget">
+            <div class="blocks">
+              <div class="block selected" data-bid="1">
+                <b>A</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="2">
+                <b>B</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="1">
+                <b>A</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="2">
+                <b>B</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="1">
+                <b>A</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="2">
+                <b>B</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              
+            </div>
+
+            <div class="activities" data-bid="1">
+              <!--  icon-ok-circle: signed up for
+                    icon-circle-blank: open
+                    icon-adjust: half full
+                    icon-exclamation-sign: almost full
+                    icon-circle: full
+                    icon-minus-sign: restricted
+                    icon-remove-sign: cancelled
+              -->
+             
+              <div class="activity" data-aid="1">
+                <i class="icon-act signedup"></i>
+                <h3>Signed up</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act open"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act half"></i>
+                <h3>More than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act almost"></i>
+                <h3>More than 90% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act full"></i>
+                <h3>Full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act restricted"></i>
+                <h3>Restricted</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act cancelled"></i>
+                <h3>Cancelled</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="icon-act icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="bottom-container">
+            <h2 class="schedule">
+              Schedule
+            </h2>
+
+            <div class="schedule-widget">
+              <div class="day yesterday">
+                <h3>Thursday, November 14</h3>
+
+              </div>
+              <div class="day today">
+                <h3>Friday, November 15</h3>
+              </div>
+              <div class="day tomorrow">
+                <h3>Saturday, November 16</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
