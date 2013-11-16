@@ -4,7 +4,7 @@
     <title>Intranet - Dashboard</title>
     <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:100italic,400italic,700italic,100,400,700" />
-        <link rel="stylesheet" type="text/css" href="https://ion.tjhsst.edu/static/css/base.css" />
+        <link rel="stylesheet" type="text/css" href="base.css" />
     <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-ui-1.10.3.min.js"></script>
     <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/modernizr.js"></script>
@@ -15,13 +15,14 @@
     /* left wrapper */
     .left-wrapper {
       text-align: center;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 200px;
       height: 100%;
       z-index: 10;
       border-right: 1px solid rgba(0,0,0,.1);
+      background: inherit;
     }
     
     .left {
@@ -221,7 +222,9 @@
     }
 
     .nav li.bottom {
-      float: bottom;
+      position: absolute;
+      bottom: 0;
+      width: 200px;
     }
 
     .nav li a {
@@ -419,6 +422,447 @@
         </div>
       </div>
     </div>
+    <style type="text/css">
+    /* main styles */
+    .main-wrapper {
+      margin-left: 200px;
+    }
 
+    .main {
+
+    }
+
+    .main h2 {
+      font-size: 20px;
+      padding: 20px;
+    }
+    </style>
+    <style type="text/css">
+    /* dashboard */
+
+    /* announcements */
+    .dashboard h2.announcements {
+      /* needed so the post button is lined up */
+      width: 510px;
+    }
+
+    .dashboard h2.announcements .actions {
+      float: right;
+      margin-top: -4px;
+    }
+
+    .dashboard .announcements-container {
+      margin-left: 30px;
+      width: 500px;
+    }
+
+    .announcements-container .announcement {
+      /*position: relative;*/
+      background-color: rgb(252,252,252);
+      border-radius: 5px;
+      border: 1px solid rgb(216, 216, 216);
+      padding: 6px 10px;
+      margin-bottom: 6px;
+      behavior: url("/static/js/PIE/PIE.htc");
+    }
+
+    .announcement h3 {
+      color: rgb(72,72,72);
+      font-size: 18px;
+    }
+
+    .announcement .actions {
+      /*position: absolute;
+      right: 10px;
+      top: 10px;*/
+      float: right;
+      margin-top: -25px;
+    }
+
+    .announcement .actions i {
+      font-size: 14px;
+      padding-left: 3px;
+      color: rgb(169,169,169);
+      text-decoration: none;
+    }
+
+    .announcement .actions i:hover {
+      color: rgb(72,72,72);
+    }
+
+    .announcement .metadata, .announcement .metadata a {
+      color: rgb(169,169,169);
+    }
+
+    .announcement .metadata {
+      font-size: 12px;
+    }
+
+    .announcement .metadata b {
+      color: rgb(72,72,72);
+    }
+    </style>
+    <div class="main-wrapper">
+      <div class="main dashboard">
+
+        <h2 class="announcements">
+          Announcements
+          <span class="actions">
+            <button>
+              <i class="icon-plus"></i>
+              Post
+            </button>
+          </span>
+        </h2>
+
+        <div class="announcements-container">
+
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+
+            </div>
+          </div>
+
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+            </div>
+          </div>
+
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+            
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+            </div>
+          </div>
+
+          <div class="announcement" data-id="1" data-author="10">
+            
+            <h3>Such newspost</h3>
+
+            <div class="actions">
+              <a href=""><i class="icon-pencil"></i></a>
+              <a href=""><i class="icon-trash"></i></a>
+            </div>
+            <div class="metadata">
+              <a href=""><b>Evan Glazer</b></a>
+               - Friday, November 15th - <a href="">view groups</a>
+            </div>
+            
+            <div class="message">
+              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
+            </div>
+          </div>
+        </div>
+    <style type="text/css">
+    .dashboard .right-container {
+      position: absolute;
+      top: 0;
+      left: 730px;
+      width: 465px;
+    }
+
+    .dashboard .eighth-widget {
+      margin-left: 30px;
+    }
+
+    /* eighth widget */
+
+    .eighth-widget .blocks {
+      width: 120px;
+      height: 200px;
+      border: 1px solid rgb(216, 216, 216);
+    }
+
+    .eighth-widget .block {
+      border: 1px solid rgb(216, 216, 216);
+      /*border-right: none;*/
+      margin: -1px -1px -1px -1px;
+      padding: 5px 0 5px 5px;
+    }
+
+    .eighth-widget .block.selected {
+      background-color: rgb(252,252,252);
+    }
+
+    .eighth-widget .block.selected h3, .eighth-widget .block:hover h3 {
+      color: rgb(72, 72, 72);
+    }
+
+
+    .eighth-widget .block b {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: center;
+      background-color: rgb(215,215,215);
+      border-radius: 3px;
+      behavior: url("/static/js/PIE/PIE.htc");
+    }
+
+    .eighth-widget .block h3 {
+      display: inline;
+      font-size: 13px;
+
+      color: rgb(169, 169, 169);
+    }
+
+    .eighth-widget .block.loader {
+      border-bottom: none;
+      text-align: center;
+    }
+
+    /* activities */
+    .eighth-widget .activities {
+      position: absolute;
+      left: 152px;
+      top: 68px;
+      width: 314px;
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid rgb(216, 216, 216);
+    }
+
+    .eighth-widget .activity {
+      border: 1px solid rgb(216, 216, 216);
+      margin: -1px -1px -1px -1px;
+      padding: 4px 3px;
+      width: 307px;
+    }
+
+    .eighth-widget .activity h3, .eighth-widget .activity h4 {
+      vertical-align: middle;
+    }
+
+    .eighth-widget .activity h3 {
+      display: inline;
+      color: rgb(74, 74, 74);
+    }
+
+    .eighth-widget .activity h4 {
+      display: inline;
+      float: right;
+      color: rgb(169,169,169);
+    }
+
+    /* activity icons */
+
+    .act-icon {
+      font-size: 17px;
+      vertical-align: middle;
+    }
+
+    </style>
+        
+        <div class="right-container">
+          <h2 class="eighth">
+            Eighth Period
+          </h2>
+          <div class="eighth-widget">
+            <div class="blocks">
+              <div class="block selected" data-bid="1">
+                <b>A</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="2">
+                <b>B</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="1">
+                <b>A</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="2">
+                <b>B</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="1">
+                <b>A</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              <div class="block" data-bid="2">
+                <b>B</b>
+                <h3>Mon, Nov 18</h3>
+              </div>
+              
+            </div>
+
+            <div class="activities" data-bid="1">
+              <!--  icon-ok-circle: signed up for
+                    icon-circle-blank: open
+                    icon-adjust: half full
+                    icon-exclamation-sign: almost full
+                    icon-circle: full
+                    icon-minus-sign: restricted
+                    icon-remove-sign: cancelled
+              -->
+             
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-ok-circle"></i>
+                <h3>Signed up</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-adjust"></i>
+                <h3>More than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-exclamation-sign"></i>
+                <h3>More than 90% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-circle"></i>
+                <h3>Full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-minus-sign"></i>
+                <h3>Restricted</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-remove-sign"></i>
+                <h3>Cancelled</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              <div class="activity" data-aid="1">
+                <i class="act-icon icon-circle-blank"></i>
+                <h3>Less than 50% full</h3>
+                <h4>Hamilton - 115</h4>
+              </div>
+              
+            </div>
+          </div>
+          <style type="text/css">
+          .bottom-container {
+            position: absolute;
+            top: 300px;
+            left: 0;
+            width: 435px;
+            margin-left: 30px;
+          }
+
+          .schedule-widget {
+            position: absolute;
+            overflow: hidden;
+            height: 300px;
+            width: 435px;
+            margin-left: 30px;
+            border: 1px solid rgb(216, 216, 216);
+            margin: -1px -1px -1px -1px;
+          }
+
+          .schedule-widget .day.yesterday {
+            position: absolute;
+            top: 0;
+            left: -175px;
+          }
+
+          .schedule-widget .day.today {
+            margin-left: 86px;
+            background-color: rgb(252, 252, 252);
+          }
+
+          .schedule-widget .day.tomorrow {
+            position: absolute;
+            top: 0;
+            left: 347px;
+          }
+
+          .schedule-widget .day {
+            width: 260px;
+            height: 300px;
+            border: 1px solid rgb(216, 216, 216);
+            background-color: rgb(236, 236, 236);
+          }
+          .schedule-widget .day h3 {
+            font-size: 18px;
+            text-align: center;
+          }
+          </style>
+          <div class="bottom-container">
+            <h2 class="schedule">
+              Schedule
+            </h2>
+
+            <div class="schedule-widget">
+              <div class="day yesterday">
+                <h3>Thursday, November 14</h3>
+
+              </div>
+              <div class="day today">
+                <h3>Friday, November 15</h3>
+              </div>
+              <div class="day tomorrow">
+                <h3>Saturday, November 16</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
   </body>
 </html>
