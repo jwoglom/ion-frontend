@@ -1,875 +1,142 @@
 <!doctype html>
 <html>
   <head>
-    <title>Intranet - Dashboard</title>
+    <title>Intranet - Login</title>
+
+    <meta charset="UTF-8" />
+    <meta name="description" content="The intranet for students and faculty at The Thomas Jefferson High School for Science and Technology in Alexandria, VA." />
+    <meta name="keywords" content="TJ Intranet, TJHSST Intranet, Thomas Jefferson Intranet, TJ Ion, TJHSST Ion, TJ Iodine, TJHSST Iodine, Thomas Jefferson High School for Science and Technology" />
+    <meta name="author" content="The TJ Intranet Development Team" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <link rel="author" href="http://www.tjhsst.edu/admin/livedoc/index.php/Iodine#Intranet_Credits" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="/static/img/tj_logo_login.png" type="image/png" />
+
     <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:100italic,400italic,700italic,100,400,700" />
-        <link rel="stylesheet" type="text/css" href="base.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:100italic,400italic,700italic,100,400,700" />
+    <link rel="stylesheet" type="text/css" href="base.css" />
+
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" type="text/css" href="login.schedule.css" />
     <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/jquery-ui-1.10.3.min.js"></script>
     <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/lib/modernizr.js"></script>
     <script type="text/javascript" src="https://ion.tjhsst.edu/static/js/common.js"></script>
-    <script type="text/javascript" src="dropdown.js"></script>
-    <script type="text/javascript" src="nav.js"></script>
-    <style type="text/css">
-    /* left wrapper */
-    .left-wrapper {
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200px;
-      height: 100%;
-      z-index: 10;
-      border-right: 1px solid rgba(0,0,0,.1);
-      background: rgba(232,232,232,0.5);
-    }
-    
-    .left {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
 
-    .header {
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(0,0,0,.1);
-    }
-
-    .title {
-      margin-bottom: 3px;
-    }
-
-    .logo {
-      background-image: url(https://ion.tjhsst.edu/static/img/tj_logo_login.png);
-      background-repeat: no-repeat;
-      height: 74px;
-      width: 90px;
-      margin: 10px auto auto auto;
-    }
-
-    h1 {
-      height: 37px;
-      width: 200px;
-      line-height: 37px;
-      text-align: center;
-    }
-    </style>
-    <style type='text/css'>
-    ul.status {
-      padding-left: 0;
-    }
-
-    /* notifications */
-    .notifications {
-      display: inline-block;
-      position: relative;
-      padding: 0 10px;
-      line-height: normal;
-    }
-
-    .has-dropdown {
-      cursor: pointer;
-    }
-
-    .dropdown-item-wrapper {
-      height: 20px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-      padding: 3px 5px;
-    }
-
-    .notifications i {
-      position: relative;
-      display: inline-block;
-      font-size: 17px;
-      top: 1px;
-      line-height: normal;
-      text-align: center;
-      width: 16px;
-    }
-
-    .notifications-badge-wrapper {
-      display: inline-block;
-      line-height: normal;
-    }
-
-    .notifications-badge {
-      color: white;
-      display: inline-block;
-      position: relative;
-      top: -1px;
-      height: 14px;
-      line-height: 14px;
-      padding: 0 4px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-      background-color: rgb(255,72,72);
-      font-size: 10px;
-      font-weight: bold;
-      /*text-shadow: 0 1px 0 rgb(173, 2, 11);
-      box-shadow: 0 1px 0 rgb(4,33,71);*/
-      behavior: url("/static/js/PIE/PIE.htc");
-    }
-    
-    .notifications .dropdown-menu {
-      /*margin: 35px -45px;*/
-      margin: 33px -112px;
-      width: 180px;
-
-    }
-    .notifications .dropdown-menu div.arrow {
-      left: 53px;
-    }
-
-    .dropdown-menu {
-      display: none;
-      opacity: 0;
-      position: absolute;
-      color: rgb(72,72,72);
-      background-color: white;
-      top: 10px;
-      margin-top: 35px;
-      padding: 10px;
-      right: 0;
-      line-height: 1.7;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      border: 1px solid rgb(129, 129, 129);
-      cursor: auto;
-      list-style: none;
-      z-index: 999;
-    }
-
-    .dropdown-menu .arrow {
-      display: block;
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-color: transparent;
-      border-width: 10px;
-      border-style: solid;
-      border-bottom-color: white;
-      border-top-width: 0;
-      margin-top: -20px;
-      margin-left: -5px;
-    }
-
-    .dropdown-menu li {
-      white-space: nowrap;
-    }
-
-    /* username dropdown */
-    .username {
-      display: inline-block;
-      margin-right: 10px;
-      position: relative;
-      padding: 0 10px 0 0;
-      line-height: normal;
-    }
-
-    .username .dropdown-menu .arrow {
-      right: 29.5px;
-    }
-
-    .dropdown-menu a {
-      color: rgb(72,72,72);
-      display: block;
-    }
-    </style>
-    <style type="text/css">
-    /* nav */
-
-    /* container */
-    .nav {
-      display: block;
-      /*width: 73px;*/
-      width: 100%;
-      /*border: 1px solid rgb(216, 216, 216);*/
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      text-align: center;
-      overflow: hidden;
-      float: left;
-      padding: 1px 0;
-      margin-bottom: 16px;
-      behavior: url("/static/js/PIE/PIE.htc");
-    }
-
-    /* basics */
-    .nav li {
-      border: 1px solid rgb(216, 216, 216);
-      margin: -1px -1px -1px -1px;
-    }
-
-    .nav li:first-child {
-      margin-top: -2px;
-    }
-
-    .nav li.selected {
-      background-color: rgb(252,252,252);
-    }
-
-    .nav li.selected a span, .nav li:hover a span,
-    .nav li.selected a .nav-fa-icon, .nav li:hover a .nav-fa-icon {
-      color: rgb(72,72,72);
-    }
-
-    .nav li.bottom {
-      position: absolute;
-      bottom: 0;
-      width: 200px;
-    }
-
-    .nav li a {
-      display: inline-block;
-      padding: 9px 0;
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .nav li a span {
-      padding-top: 3px;
-    }
-
-    .nav li a, .nav li a:active, .nav li a:visited {
-      text-decoration: none;
-    }
-
-    .nav li a span {
-      display: table-cell;
-      vertical-align: middle;
-      font-size: 18px;
-    }
-
-    .nav li a span, .nav li a:active span, .nav li a:visited span,
-    .nav li a .nav-fa-icon {
-      color: rgb(169,169,169);
-    }
-
-    .nav-icon, i.nav-fa-icon {
-      display: table-cell;
-      text-align: left;
-      width: 40px;
-      height: 40px;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .nav-icon {
-      background-image: url(https://ion.tjhsst.edu/static/img/icons.png);
-      background-size: 252px 84px;
-    }
-
-    .nav-fa-icon {
-      font-size: 38px; /* approx 48x40 */
-    }
-    </style>
-    <style type="text/css">
-    /* nav icons */
-    .dashboard-icon {
-      background-position: 0 0;
-    }
-
-    .nav .selected .dashboard-icon, a:hover .dashboard-icon {
-      background-position: 0 42px;
-    }
-
-    .eighth-icon {
-      background-position: -44px 0;
-    }
-
-    .nav .selected .eighth-icon, a:hover .eighth-icon {
-      background-position: -44px 42px;
-    }
-
-    .events-icon {
-      background-position: -84px 0;
-    }
-
-    .nav .selected .events-icon, a:hover .events-icon {
-      background-position: -84px 42px;
-    }
-
-    .groups-icon {
-      background-position: -126px 0;
-    }
-
-    .nav .selected .groups-icon, a:hover .groups-icon {
-      background-position: -126px 42px;
-    }
-
-    .polls-icon {
-      background-position: -168px 0;
-    }
-
-    .nav .selected .polls-icon, a:hover .polls-icon {
-      background-position: -168px 42px;
-    }
-
-    .files-icon {
-      background-position: -210px 0;
-    }
-
-    .nav .selected .files-icon, a:hover .files-icon {
-      background-position: -210px 42px;
-    }
-</style>
+    <script type="text/javascript" src="login.js"></script>
   </head>
   <body>
-    <div class="left-wrapper">
-      <div class="left">
-        <div class="header">
-          <div class="title">
-            <div class="logo"></div>
-            <h1>TJ Intranet</h1>
-          </div>
-          <ul class="status">
-            <li class="notifications has-dropdown">
-              <div class="dropdown-item-wrapper">
-                <i class="icon-bell-alt"></i>
-                <span class="notifications-badge-wrapper">
-                  <span class="notifications-badge">
-                      42
-                  </span>
-                </span>
-              </div>
-              <ul class="dropdown-menu" style="display: none; top: 50px; opacity: 0;">
-                <div class="arrow"></div>
-                <li>foo foo foo foo foo</li>
-                <li>foo foo foo foo foo</li>
-                <li>foo foo foo foo foo</li>
-                <li>foo foo foo foo foo</li>
-                <li>foo foo foo foo foo</li>
-                <li>foo foo foo foo foo</li>
-              </ul>
-            </li>
-
-            <li class="username has-dropdown">
-              <div class="dropdown-item-wrapper">
-                  <i class="icon-user"></i> James <i class="icon-caret-down"></i>
-              </div>
-              <ul class="dropdown-menu">
-                <div class="arrow"></div>
-                <li>
-                  <a href="/profile"><i class="icon-user"></i> My Profile</a>
-                </li>
-                <li>
-                  <a href="/profile/8889"><i class="icon-smile"></i> Angela William"s Profile</a>
-                  </li>
-                <li>
-                  <a href="/logout"><i class="icon-off"></i> Logout</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-
+    <div class="center-wrapper">
+        <div class="center">
+            <div class="login">
+                    <div class="title">
+                        <div class="logo">
+                        </div>
+                        <h1>TJ Intranet</h1>
+                    </div>
+                
+                <form action="" onsubmit="location='dashboard.html';return false" method="post">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='' />
+                    
+                        <input id="id_username" name="username" placeholder="Username" type="text" /><br />
+                    
+                        <input id="id_password" name="password" placeholder="Password" type="password" /><br />
+                    
+                    <input type="submit" value="Login" />
+                </form>
+            </div>
+            <div class="schedule">
+                <a href="/" class="chevron schedule-left"><i class="icon-chevron-left"></i></a>
+                Today
+                <a href="/" class="chevron schedule-right"><i class="icon-chevron-right"></i></a>
+                <br />
+                <h2>Anchor Day</h2>
+                <br />
+                Period 1: 8:30 - 9:15<br />
+                Period 2: 9:25 - 10:05<br />
+                Period 3: 10:15 - 10:55<br />
+                Period 4: 11:05 - 11:45<br />
+                Lunch: 11:45 - 12:35<br />
+                Period 5: 12:35 - 1:15<br />
+                Period 6: 1:25 - 2:05<br />
+                Period 7: 2:15 - 2:55<br />
+                Break: 2:55 - 3:10<br />
+                Period 8: 3:10 - 3:50
+            </div>
         </div>
-
-        <div class="nav-wrapper">
-          <ul class="nav">
-            <li>
-              <a href="/">
-                <i class="nav-icon dashboard-icon"></i>
-                <span>Dashboard</span>
-              </a>
-            </li>
-            <li class="selected">
-              <a href="/eighth">
-                <i class="nav-icon eighth-icon"></i>
-                <span>Eighth</span>
-              </a>
-            </li>
-            <li>
-              <a href="/events">
-                <i class="nav-icon events-icon"></i>
-                <span>Events</span>
-              </a>
-            </li>
-            <li>
-              <a href="/groups">
-                <i class="nav-icon groups-icon"></i>
-                <span>Groups</span>
-              </a>
-            </li>
-            <li>
-              <a href="/polls">
-                <i class="nav-icon polls-icon"></i>
-                <span>Polls</span>
-              </a>
-            </li>
-            <li>
-              <a href="/files">
-                <i class="nav-icon files-icon"></i>
-                <span>Files</span>
-              </a>
-            </li>
-            <li class="bottom">
-              <a href="/settings">
-                <i class="nav-fa-icon icon-gear"></i>
-                <span>Settings</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
-    <style type="text/css">
-    /* main styles */
-    .main-wrapper {
-      margin-left: 200px;
-    }
-
-    .main {
-
-    }
-
-    .main h2 {
-      font-size: 20px;
-      padding: 20px;
-    }
-    </style>
-    <style type="text/css">
-    /* dashboard */
-
-    /* announcements */
-    .dashboard h2.announcements {
-      /* needed so the post button is lined up */
-      width: 510px;
-    }
-
-    .dashboard h2.announcements .actions {
-      float: right;
-      margin-top: -4px;
-    }
-
-    .dashboard .announcements-container {
-      margin-left: 30px;
-      width: 500px;
-    }
-
-    .announcements-container .announcement {
-      /*position: relative;*/
-      background-color: rgb(252,252,252);
-      border-radius: 5px;
-      border: 1px solid rgb(216, 216, 216);
-      padding: 6px 10px;
-      margin-bottom: 6px;
-      behavior: url("/static/js/PIE/PIE.htc");
-    }
-
-    .announcement h3 {
-      color: rgb(72,72,72);
-      font-size: 18px;
-    }
-
-    .announcement .actions {
-      /*position: absolute;
-      right: 10px;
-      top: 10px;*/
-      float: right;
-      margin-top: -25px;
-    }
-
-    .announcement .actions i {
-      font-size: 14px;
-      padding-left: 3px;
-      color: rgb(169,169,169);
-      text-decoration: none;
-    }
-
-    .announcement .actions i:hover {
-      color: rgb(72,72,72);
-    }
-
-    .announcement .metadata, .announcement .metadata a {
-      color: rgb(169,169,169);
-    }
-
-    .announcement .metadata {
-      font-size: 12px;
-    }
-
-    .announcement .metadata b {
-      color: rgb(72,72,72);
-    }
-    </style>
-    <div class="main-wrapper">
-      <div class="main dashboard">
-
-        <h2 class="announcements">
-          Announcements
-          <span class="actions">
-            <button>
-              <i class="icon-plus"></i>
-              Post
-            </button>
-          </span>
-        </h2>
-
-        <div class="announcements-container">
-
-          <div class="announcement" data-id="1" data-author="10">
-            
-            <h3>Such newspost</h3>
-
-            <div class="actions">
-              <a href=""><i class="icon-pencil"></i></a>
-              <a href=""><i class="icon-trash"></i></a>
-            </div>
-            <div class="metadata">
-              <a href=""><b>Evan Glazer</b></a>
-               - Friday, November 15th - <a href="">view groups</a>
-            </div>
-
-            <div class="message">
-              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
-
-            </div>
-          </div>
-
-          <div class="announcement" data-id="1" data-author="10">
-            
-            <h3>Such newspost</h3>
-
-            <div class="actions">
-              <a href=""><i class="icon-pencil"></i></a>
-              <a href=""><i class="icon-trash"></i></a>
-            </div>
-            <div class="metadata">
-              <a href=""><b>Evan Glazer</b></a>
-               - Friday, November 15th - <a href="">view groups</a>
-            </div>
-
-            <div class="message">
-              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
-            </div>
-          </div>
-
-          <div class="announcement" data-id="1" data-author="10">
-            
-            <h3>Such newspost</h3>
-
-            <div class="actions">
-              <a href=""><i class="icon-pencil"></i></a>
-              <a href=""><i class="icon-trash"></i></a>
-            </div>
-            <div class="metadata">
-              <a href=""><b>Evan Glazer</b></a>
-               - Friday, November 15th - <a href="">view groups</a>
-            </div>
-            
-            <div class="message">
-              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
-            </div>
-          </div>
-
-          <div class="announcement" data-id="1" data-author="10">
-            
-            <h3>Such newspost</h3>
-
-            <div class="actions">
-              <a href=""><i class="icon-pencil"></i></a>
-              <a href=""><i class="icon-trash"></i></a>
-            </div>
-            <div class="metadata">
-              <a href=""><b>Evan Glazer</b></a>
-               - Friday, November 15th - <a href="">view groups</a>
-            </div>
-            
-            <div class="message">
-              <p>Labore chillwave mollit irure placeat banh mi, Odd Future vegan slow-carb Shoreditch enim. Etsy in freegan cred Brooklyn. Shoreditch fap tempor, aesthetic laboris locavore occaecat ad VHS cray aliquip elit 3 wolf moon. Twee typewriter mixtape cornhole qui keytar, swag vinyl pickled mlkshk slow-carb. Selvage mollit VHS, in enim kogi fingerstache pug direct trade Etsy Helvetica art party fugiat. Eu velit raw denim pariatur tempor, direct trade pug four loko gluten-free Shoreditch semiotics plaid. Farm-to-table est hashtag cardigan skateboard, cray ea commodo aute shabby chic Terry Richardson fingerstache laboris Wes Anderson.</p>
-            </div>
-          </div>
+    <div class="schedule-bottom">
+        <div class="schedule schedule-one">
+            Monday
+            <br />
+            <h2>Anchor Day</h2>
+            <br />
+            Period 1: 8:30 - 9:15<br />
+            Period 2: 9:25 - 10:05<br />
+            Period 3: 10:15 - 10:55<br />
+            Period 4: 11:05 - 11:45<br />
+            Lunch: 11:45 - 12:35<br />
+            Period 5: 12:35 - 1:15<br />
+            Period 6: 1:25 - 2:05<br />
+            Period 7: 2:15 - 2:55<br />
+            Break: 2:55 - 3:10<br />
+            Period 8: 3:10 - 3:50
         </div>
-    <style type="text/css">
-    .dashboard .right-container {
-      position: absolute;
-      top: 0;
-      left: 730px;
-      width: 465px;
-    }
-
-    .dashboard .eighth-widget {
-      margin-left: 30px;
-    }
-
-    /* eighth widget */
-
-    .eighth-widget .blocks {
-      width: 120px;
-      height: 200px;
-      border: 1px solid rgb(216, 216, 216);
-    }
-
-    .eighth-widget .block {
-      border: 1px solid rgb(216, 216, 216);
-      /*border-right: none;*/
-      margin: -1px -1px -1px -1px;
-      padding: 5px 0 5px 5px;
-    }
-
-    .eighth-widget .block.selected {
-      background-color: rgb(252,252,252);
-    }
-
-    .eighth-widget .block.selected h3, .eighth-widget .block:hover h3 {
-      color: rgb(72, 72, 72);
-    }
-
-
-    .eighth-widget .block b {
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: center;
-      background-color: rgb(215,215,215);
-      border-radius: 3px;
-      behavior: url("/static/js/PIE/PIE.htc");
-    }
-
-    .eighth-widget .block h3 {
-      display: inline;
-      font-size: 13px;
-
-      color: rgb(169, 169, 169);
-    }
-
-    .eighth-widget .block.loader {
-      border-bottom: none;
-      text-align: center;
-    }
-
-    /* activities */
-    .eighth-widget .activities {
-      position: absolute;
-      left: 152px;
-      top: 68px;
-      width: 314px;
-      height: 200px;
-      overflow-y: auto;
-      border: 1px solid rgb(216, 216, 216);
-    }
-
-    .eighth-widget .activity {
-      border: 1px solid rgb(216, 216, 216);
-      margin: -1px -1px -1px -1px;
-      padding: 4px 3px;
-      width: 307px;
-    }
-
-    .eighth-widget .activity h3, .eighth-widget .activity h4 {
-      vertical-align: middle;
-    }
-
-    .eighth-widget .activity h3 {
-      display: inline;
-      color: rgb(74, 74, 74);
-    }
-
-    .eighth-widget .activity h4 {
-      display: inline;
-      float: right;
-      color: rgb(169,169,169);
-    }
-
-    /* activity icons */
-
-    .icon-act {
-      font-size: 17px;
-      vertical-align: middle;
-    }
-    /* icon-ok-circle */
-    .icon-act.signedup:before { content: "\f05d"; color: rgba(0, 255, 0, 1); }
-    .icon-act.open:before { content: "\f10c"; color: rgba(0, 255, 0, 0.5); }
-    .icon-act.half:before { content: "\f042"; color: rgba(255, 127, 0, 0.3);}
-    .icon-act.almost:before { content: "\f06a"; color: rgba(255, 127, 0, 0.5); }
-    .icon-act.full:before { content: "\f111"; color: rgba(255, 0, 0, 0.5); }
-    .icon-act.restricted:before { content: "\f056"; color: rgba(255, 0, 0, 0.3); }
-    .icon-act.cancelled:before { content: "\f057"; color: rgba(255, 0, 0, 0.3); }
-    </style>
-        
-        <div class="right-container">
-          <h2 class="eighth">
-            Eighth Period
-          </h2>
-          <div class="eighth-widget">
-            <div class="blocks">
-              <div class="block selected" data-bid="1">
-                <b>A</b>
-                <h3>Mon, Nov 18</h3>
-              </div>
-              <div class="block" data-bid="2">
-                <b>B</b>
-                <h3>Mon, Nov 18</h3>
-              </div>
-              <div class="block" data-bid="1">
-                <b>A</b>
-                <h3>Mon, Nov 18</h3>
-              </div>
-              <div class="block" data-bid="2">
-                <b>B</b>
-                <h3>Mon, Nov 18</h3>
-              </div>
-              <div class="block" data-bid="1">
-                <b>A</b>
-                <h3>Mon, Nov 18</h3>
-              </div>
-              <div class="block" data-bid="2">
-                <b>B</b>
-                <h3>Mon, Nov 18</h3>
-              </div>
-              
-            </div>
-
-            <div class="activities" data-bid="1">
-              <!--  icon-ok-circle: signed up for
-                    icon-circle-blank: open
-                    icon-adjust: half full
-                    icon-exclamation-sign: almost full
-                    icon-circle: full
-                    icon-minus-sign: restricted
-                    icon-remove-sign: cancelled
-              -->
-             
-              <div class="activity" data-aid="1">
-                <i class="icon-act signedup"></i>
-                <h3>Signed up</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act open"></i>
-                <h3>Less than 50% full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act half"></i>
-                <h3>More than 50% full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act almost"></i>
-                <h3>More than 90% full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act full"></i>
-                <h3>Full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act restricted"></i>
-                <h3>Restricted</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act cancelled"></i>
-                <h3>Cancelled</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act icon-circle-blank"></i>
-                <h3>Less than 50% full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act icon-circle-blank"></i>
-                <h3>Less than 50% full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act icon-circle-blank"></i>
-                <h3>Less than 50% full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              <div class="activity" data-aid="1">
-                <i class="icon-act icon-circle-blank"></i>
-                <h3>Less than 50% full</h3>
-                <h4>Hamilton - 115</h4>
-              </div>
-              
-            </div>
-          </div>
-          <style type="text/css">
-          .bottom-container {
-            position: absolute;
-            top: 300px;
-            left: 0;
-            width: 435px;
-            margin-left: 30px;
-          }
-
-          .schedule-widget {
-            position: absolute;
-            overflow: hidden;
-            height: 300px;
-            width: 435px;
-            margin-left: 30px;
-            border: 1px solid rgb(216, 216, 216);
-            margin: -1px -1px -1px -1px;
-          }
-
-          .schedule-widget .day.yesterday {
-            position: absolute;
-            top: 0;
-            left: -175px;
-          }
-
-          .schedule-widget .day.today {
-            margin-left: 86px;
-            background-color: rgb(242, 242, 242);
-          }
-
-          .schedule-widget .day.tomorrow {
-            position: absolute;
-            top: 0;
-            left: 347px;
-          }
-
-          .schedule-widget .day {
-            width: 260px;
-            height: 300px;
-            border: 1px solid rgb(216, 216, 216);
-            background-color: rgb(232, 232, 232);
-          }
-          .schedule-widget .day h3 {
-            font-size: 18px;
-            text-align: center;
-          }
-          </style>
-          <div class="bottom-container">
-            <h2 class="schedule">
-              Schedule
-            </h2>
-
-            <div class="schedule-widget">
-              <div class="day yesterday">
-                <h3>Thursday, November 14</h3>
-
-              </div>
-              <div class="day today">
-                <h3>Friday, November 15</h3>
-              </div>
-              <div class="day tomorrow">
-                <h3>Saturday, November 16</h3>
-              </div>
-            </div>
-          </div>
+        <div class="schedule schedule-two">
+            Tuesday
+            <br />
+            <h2>Anchor Day</h2>
+            <br />
+            Period 1: 8:30 - 9:15<br />
+            Period 2: 9:25 - 10:05<br />
+            Period 3: 10:15 - 10:55<br />
+            Period 4: 11:05 - 11:45<br />
+            Lunch: 11:45 - 12:35<br />
+            Period 5: 12:35 - 1:15<br />
+            Period 6: 1:25 - 2:05<br />
+            Period 7: 2:15 - 2:55<br />
+            Break: 2:55 - 3:10<br />
+            Period 8: 3:10 - 3:50
         </div>
-
-
-
-      </div>
+        <div class="schedule schedule-four">
+            Thursday
+            <br />
+            <h2>Anchor Day</h2>
+            <br />
+            Period 1: 8:30 - 9:15<br />
+            Period 2: 9:25 - 10:05<br />
+            Period 3: 10:15 - 10:55<br />
+            Period 4: 11:05 - 11:45<br />
+            Lunch: 11:45 - 12:35<br />
+            Period 5: 12:35 - 1:15<br />
+            Period 6: 1:25 - 2:05<br />
+            Period 7: 2:15 - 2:55<br />
+            Break: 2:55 - 3:10<br />
+            Period 8: 3:10 - 3:50
+        </div>
+        <div class="schedule schedule-five">
+            Friday
+            <br />
+            <h2>Anchor Day</h2>
+            <br />
+            Period 1: 8:30 - 9:15<br />
+            Period 2: 9:25 - 10:05<br />
+            Period 3: 10:15 - 10:55<br />
+            Period 4: 11:05 - 11:45<br />
+            Lunch: 11:45 - 12:35<br />
+            Period 5: 12:35 - 1:15<br />
+            Period 6: 1:25 - 2:05<br />
+            Period 7: 2:15 - 2:55<br />
+            Break: 2:55 - 3:10<br />
+            Period 8: 3:10 - 3:50
+        </div>
     </div>
+    <div class="bg"></div>
+    <a class="verisign-seal-sm" target="_blank" title="Norton Secured Seal - Click to Verify" oncontextmenu="return false;" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=ion.tjhsst.edu&amp;lang=en" onclick="window.open(this.href, "norton", "menubar=no,location=yes,resizable=no,scrollbars=no,status=no,width=542,height=280"); return false">
+        <img src="/static/img/verisign-seal-sm.png" oncontextmenu="return false;" alt="Norton Secured Seal - Click to Verify" />
+    </a>
   </body>
 </html>

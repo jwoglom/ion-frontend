@@ -1,5 +1,14 @@
 $(document).ready(function() {
-    $(".nav a").click(function(e) {e.preventDefault();
+    $("a").click(function(e) {
+        l = $(this).attr('data-loc');
+        if(l != null) {
+            e.preventDefault();
+            setTimeout(function(l) { return function() {
+                window.location.href = l + '.html';
+            } }($(this).attr('data-loc')), 200);
+        }
+    });
+    $(".nav a").click(function(e) {
         $(".nav .selected").removeClass("selected");
         $(this).parent().addClass("selected");
     });
